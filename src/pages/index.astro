@@ -1,24 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Card from '../components/Card.astro'
-
-const listTodos = [
-  {
-    id: 1,
-    title: 'Aprender Node',
-    completed: false,
-  },
-  {
-    id: 2,
-    title: 'Estudiar Estadística',
-    completed: true,
-  },
-  {
-    id: 3,
-    title: 'Salir a pasear',
-    completed: true,
-  },
-]
+import App from '../components/App.jsx'
 ---
 
 <Layout title="Welcome to Astro.">
@@ -53,11 +35,7 @@ const listTodos = [
     </svg>
     <h1>Welcome to <span class="text-gradient">Astro</span></h1>
 
-    {
-      listTodos.map((item) => (
-        <Card title={item.title} completed={item.completed} />
-      ))
-    }
+    <App client:load />
   </main>
 </Layout>
 
