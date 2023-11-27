@@ -1,4 +1,5 @@
 import React from 'react'
+import type { Todo } from '../types'
 import Card from './Card'
 
 const listTodos = [
@@ -26,6 +27,22 @@ function App() {
     setTodos(newListTodos)
   }
 
+  const onHandleCompleted = ({
+    id,
+    completed,
+  }: Pick<Todo, 'id' | 'completed'>): void => {
+    const newTodos = todos.map((item) => {
+      if (item.id === id) {
+        return {
+          ...item,
+          completed,
+        }
+      }
+      return item
+    })
+    setTodos(newTodos)
+  }
+
   return (
     <div>
       {todos.map((item) => (
@@ -35,6 +52,7 @@ function App() {
           title={item.title}
           completed={item.completed}
           onHandleRemove={onHandleRemove}
+          onHandleCompleted={onHandleCompleted}
         />
       ))}
     </div>

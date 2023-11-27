@@ -1,8 +1,8 @@
 <h1>Principal</h1>
 
 - ✅ Listar Todos
-- ❌ Borrar Todo
-- ❌ Marcar Todo completado
+- ✅ Borrar Todo
+- ✅ Marcar Todo completado
 
 - ❌ Listar Todos
 

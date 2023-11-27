@@ -42,5 +42,7 @@ h2 {
   transform: scale(1.5); /* Ajusta el tamaño del checkbox */
 }
 .completed {
-  text-decoration: overline;
+  text-decoration: line-through;
+  text-decoration-color: red;
+  text-decoration-thickness: 0.5rem;
 }
