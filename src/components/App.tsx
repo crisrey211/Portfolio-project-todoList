@@ -42,7 +42,6 @@ function App() {
     })
     setTodos(newTodos)
   }
-
   return (
     <div>
       {todos.map((item) => (

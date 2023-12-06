@@ -4,8 +4,6 @@
 - ✅ Borrar Todo
 - ✅ Marcar Todo completado
 
-- ❌ Listar Todos
-
 <h1>Filtros</h1>
 
 - ❌ Mostrar número de todos

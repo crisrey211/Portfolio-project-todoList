@@ -18,13 +18,18 @@ function Card({
     <li className="link-card">
       <h2 className={completed ? 'completed' : ''}>{title}</h2>
       <input
+        checked={completed}
         type="checkbox"
         className="checkbox-big"
         onChange={(ev) =>
           onHandleCompleted({ id, completed: ev.target.checked })
         }
       />
-      <button onClick={() => onHandleRemove(id)}>Borrar</button>
+      <div className="button">
+        <button className="noselect" onClick={() => onHandleRemove(id)}>
+          <span className="text">Delete</span>
+        </button>
+      </div>
     </li>
   )
 }
