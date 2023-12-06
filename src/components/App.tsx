@@ -1,6 +1,8 @@
 import React from 'react'
-import type { Todo } from '../types'
+import { TODO_FILTERS } from 'src/const'
+import type { FilterValue, Todo } from '../types'
 import Card from './Card'
+import Footer from './Footer'
 
 const listTodos = [
   {
@@ -21,6 +23,9 @@ const listTodos = [
 ]
 function App() {
   const [todos, setTodos] = React.useState(listTodos)
+  const [filterSelected, setFilterSelected] = React.useState<FilterValue>(
+    TODO_FILTERS.ALL
+  )
 
   const onHandleRemove = (id: number) => {
     const newListTodos = todos.filter((item) => item.id !== id)
@@ -42,6 +47,14 @@ function App() {
     })
     setTodos(newTodos)
   }
+
+  const handleFilterChange = (filter: FilterValue): void => {
+    setFilterSelected(filter)
+  }
+
+  const activeCounter = listTodos.filter((item) => !item.completed).length
+  const completedCounter = listTodos.length - activeCounter
+
   return (
     <div>
       {todos.map((item) => (
@@ -54,6 +67,13 @@ function App() {
           onHandleCompleted={onHandleCompleted}
         />
       ))}
+      <Footer
+        activeCounter={activeCounter}
+        completedCounter={completedCounter}
+        filterSelected={filterSelected}
+        handleFilterChange={handleFilterChange}
+        onClearCompleted={() => {}}
+      />
     </div>
   )
 }

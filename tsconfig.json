@@ -1,11 +1,13 @@
 {
-  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "moduleResolution": "node",
     "baseUrl": ".",
     "jsx": "react-jsx",
     "jsxImportSource": "react",
-    "strict": true
+    "noImplicitAny": false,
+    "strict": true,
+    "esModuleInterop": true,
+    "module": "Node16"
   },
   "include": ["src/**/*.astro", "src/**/*.tsx"]
 }
