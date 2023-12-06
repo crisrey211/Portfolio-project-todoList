@@ -55,9 +55,15 @@ function App() {
   const activeCounter = listTodos.filter((item) => !item.completed).length
   const completedCounter = listTodos.length - activeCounter
 
+  const filteredTodos = todos.filter((todo) => {
+    if (filterSelected === TODO_FILTERS.ACTIVE) return !todo.completed
+    if (filterSelected === TODO_FILTERS.COMPLETED) return todo.completed
+    return todo
+  })
+
   return (
     <div>
-      {todos.map((item) => (
+      {filteredTodos.map((item) => (
         <Card
           key={item.id}
           id={item.id}
