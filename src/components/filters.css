@@ -1,3 +1,16 @@
 .selected {
   background-color: green;
 }
+ul {
+  background-color: #23262d;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-around;
+}
+li {
+  list-style: none;
+}
+a {
+  color: white;
+  text-decoration: none;
+}

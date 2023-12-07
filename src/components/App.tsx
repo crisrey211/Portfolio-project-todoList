@@ -52,6 +52,12 @@ function App() {
     setFilterSelected(filter)
   }
 
+  const handleRemoveAllCompleted = () => {
+    const newTodos = todos.filter((item) => !item.completed)
+    console.log(newTodos)
+    setTodos(newTodos)
+  }
+
   const activeCounter = listTodos.filter((item) => !item.completed).length
   const completedCounter = listTodos.length - activeCounter
 
@@ -78,7 +84,7 @@ function App() {
         completedCounter={completedCounter}
         filterSelected={filterSelected}
         handleFilterChange={handleFilterChange}
-        onClearCompleted={() => {}}
+        onClearCompleted={handleRemoveAllCompleted}
       />
     </div>
   )

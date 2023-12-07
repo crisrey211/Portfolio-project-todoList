@@ -12,6 +12,7 @@ interface Props {
 
 function Footer({
   activeCounter = 0,
+  completedCounter = 0,
   onClearCompleted,
   filterSelected,
   handleFilterChange,
@@ -19,10 +20,21 @@ function Footer({
   return (
     <footer className="footer">
       <span>{activeCounter} Tareas completadas</span>
+
       <Filters
         filterSelected={filterSelected}
         handleFilterChange={handleFilterChange}
       />
+      {completedCounter > 0 && (
+        <button
+          onClick={(ev) => {
+            ev.preventDefault()
+            onClearCompleted()
+          }}
+        >
+          Borrar completados
+        </button>
+      )}
     </footer>
   )
 }
