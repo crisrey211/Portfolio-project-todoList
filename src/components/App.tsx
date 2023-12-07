@@ -48,19 +48,23 @@ function App() {
     setTodos(newTodos)
   }
 
+  //Selector de filtros
   const handleFilterChange = (filter: FilterValue): void => {
     setFilterSelected(filter)
   }
 
+  //Borrar tareas completadas
   const handleRemoveAllCompleted = () => {
     const newTodos = todos.filter((item) => !item.completed)
     console.log(newTodos)
     setTodos(newTodos)
   }
 
+  //Contador de todos completados
   const activeCounter = listTodos.filter((item) => !item.completed).length
   const completedCounter = listTodos.length - activeCounter
 
+  //Selector de filtros
   const filteredTodos = todos.filter((todo) => {
     if (filterSelected === TODO_FILTERS.ACTIVE) return !todo.completed
     if (filterSelected === TODO_FILTERS.COMPLETED) return todo.completed

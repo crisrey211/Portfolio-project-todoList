@@ -7,7 +7,7 @@
 <h1>Filtros</h1>
 
 - ❌ Mostrar número de todos
-- ❌ Añadir forma de borra todos <strong>completado</strong>
+- ✅ Añadir forma de borra todos <strong>completado</strong>
 
 <h1>Avanzado</h1>
 
